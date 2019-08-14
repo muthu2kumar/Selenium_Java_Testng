@@ -1,0 +1,7 @@
+/bin/
+/target/
+/test-output/
+/TestReport/
+
+Log.html
+Log.logs
