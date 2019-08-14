@@ -1,5 +1,7 @@
 package pages;
 
+import java.time.LocalDate;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utils.CommonLibrary;
+import utils.DateUtils;
 
 public class Search_Page {
 
@@ -19,7 +22,7 @@ public class Search_Page {
 	private WebElement pickUpLocation_Txt;
 	
 	/**
-	 * Drop up location text box
+	 * Drop location text box
 	 */
 	@FindBy(id = "DropLoc_value")
 	private WebElement dropLocation_Txt;
@@ -33,6 +36,36 @@ public class Search_Page {
 	 * Drop location dropdown
 	 */
 	By dropLocation_DropDown = By.cssSelector("div#DropLoc_dropdown div.angucomplete-results>div>div span.angucomplete-result-name.ng-binding.ng-scope");
+	
+	/**
+	 * pickup date field
+	 */
+	@FindBy(name = "reservationModel.pickUpDateDisplay")
+	private WebElement pickUp_DateField;
+	
+	/**
+	 * drop date field
+	 */
+	@FindBy(name = "reservationModel.dropDateDisplay")
+	private WebElement drop_DateField;
+	
+	/**
+	 * current month's calendar field
+	 */
+	By currentMonth_Calendar = By.cssSelector("table.ui-datepicker-calendar.uitable.ui-datepicker-table-first td>a");
+	
+	/**
+	 * next month's calendar field
+	 */
+	By nextMonth_Calendar = By.cssSelector("table.ui-datepicker-calendar.uitable.ui-datepicker-table-last td>a");
+	
+	/**
+	 * Search car button
+	 */
+	@FindBy(id = "res-home-select-car")
+	private WebElement search_Button;
+	
+	
 	
 	/**
 	 * Constructor
@@ -54,5 +87,42 @@ public class Search_Page {
 		CommonLibrary.clickElementFromListByName(driver, dropLocation_DropDown, dropLocation);
 	}
 	
+	public void chooseMondayToSunday() {
+		
+		LocalDate ld = DateUtils.nextOrSame("MONDAY");
+		int startDate = ld.getDayOfMonth();
+		int startMonth = ld.getMonthValue();
+		chooseStartDate(startDate,startMonth);
+		
+		int endDate = ld.plusDays(7).getDayOfMonth();
+		int endMonth = ld.plusDays(7).getMonthValue();
+		chooseEndDate(endDate, endMonth);
+		
+		
+	}
+	
+	public void chooseStartDate(int date, int month) {
+		int currentMonth = DateUtils.getCurrentMonth();
+		CommonLibrary.Click(driver, pickUp_DateField);
+		if(currentMonth == month) {
+			CommonLibrary.clickElementFromListByName(driver, currentMonth_Calendar, Integer.toString(date));
+		}else {
+			CommonLibrary.clickElementFromListByName(driver, nextMonth_Calendar, Integer.toString(date));
+		}
+	}
+	
+	public void chooseEndDate(int date, int month) {
+		int currentMonth = DateUtils.getCurrentMonth();
+		CommonLibrary.Click(driver, drop_DateField);
+		if(currentMonth == month) {
+			CommonLibrary.clickElementFromListByName(driver, currentMonth_Calendar, Integer.toString(date));
+		}else {
+			CommonLibrary.clickElementFromListByName(driver, nextMonth_Calendar, Integer.toString(date));
+		}
+	}
+	
+	public void clickSearchButton() {
+		CommonLibrary.Click(driver, search_Button);
+	}
 	
 }

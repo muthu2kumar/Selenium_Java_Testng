@@ -27,7 +27,6 @@ import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
 
-import locators.Header_Locators;
 
 
 
@@ -56,6 +55,11 @@ public class CommonLibrary {
 	{
 		WebElement element=waitForElementToBeVisible(driver, by);
 
+		element.click();
+	}
+	
+	public static void Click(WebDriver driver, WebElement element)
+	{
 		element.click();
 	}
 
@@ -356,6 +360,17 @@ public class CommonLibrary {
 		ele.get(index).click();
 
 	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param ele
+	 * @param index
+	 */
+	public static void clickElementFromListByIndex(WebDriver driver,List<WebElement> ele, int index) {
+		ele.get(index).click();
+
+	}
 
 	/**
 	 * @author sds-v.muthu
@@ -365,6 +380,23 @@ public class CommonLibrary {
 	 */
 	public static int getItemIndexFromList(WebDriver driver, By by, String Name) {
 		List<WebElement> ele = driver.findElements(by);
+		for(int i = 0; i<ele.size();i++) {
+			if(ele.get(i).getText().equalsIgnoreCase(Name)) {
+				return i;
+			}
+		}
+		return -1;
+	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param ele
+	 * @param Name
+	 * @return index of the element, whose text matches with expected,  in the list
+	 */
+	public static int getItemIndexFromList(WebDriver driver, List<WebElement> ele, String Name) {
+		
 		for(int i = 0; i<ele.size();i++) {
 			if(ele.get(i).getText().equalsIgnoreCase(Name)) {
 				return i;
@@ -514,7 +546,7 @@ public class CommonLibrary {
 	public static void hoverOver(WebDriver driver, By by) {
 		Wait waitForElement = new WebDriverWait(driver,60);
 		waitForElement.until(ExpectedConditions.visibilityOfElementLocated(by));
-		WebElement ele = driver.findElement(Header_Locators.loginMenu);
+		WebElement ele = driver.findElement(by);
 		Actions action = new Actions(driver);
 		action.moveToElement(ele).perform();
 		Logger.log("We think we have hovered mouse on respective elemment");
