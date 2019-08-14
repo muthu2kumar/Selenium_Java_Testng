@@ -1,0 +1,10 @@
+shippingCode,paymentCode,orderID,phone,sku,email
+GW,CCIN,6130238095,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+GW,COD,6103528146,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+GW,BT,6156697576,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+UPS,COD,6135512595,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+UPS,BT,6115187345,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+MyQLED,BT,6156742540,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+MyHome,BT,6130758046,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+personal_pick,BT,6106037546,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com
+personal_pick,CCPP,6135172325,7777777777,"[{quantity:1,sku_id:EF-AJ330TFEGWW}]",swatestac135@gmail.com

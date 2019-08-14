@@ -1,0 +1,4 @@
+{
+	"payment_method": "#payment_method",
+	"encrypted_payment_context": #encrypted_details
+}

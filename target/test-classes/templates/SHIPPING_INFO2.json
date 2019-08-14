@@ -1,0 +1,36 @@
+{
+	"scEuropa": {
+		"first_name": "Samsung Galéria SC Europa",
+		"line_1": "Na Troskách 25,",
+		"city": "Banská Bystrica",
+		"country": "Slovensko",
+		"postal_code": "97401",
+		"email": "samsungBB@obchod-samsung.sk"
+	},
+	"aupark": {
+		"first_name": "Samsung Galéria Aupark",
+		"line_1": "Námestie osloboditeľov 1,",
+		"city": "Košice",
+		"country": "Slovensko",
+		"postal_code": "04001",
+		"email": "samsungKE@obchod-samsung.sk"
+	},
+	"CentrálnySklad": {
+		"first_name": "Bratislava - Centrálny sklad - IRD retail services, s. r. o.",
+		"line_1": "Ivanská cesta 3421/65,",
+		"city": "Bratislava",
+		"country": "Slovensko",
+		"postal_code": "82104",
+		"email": "samsungBA@obchod-samsung.sk"
+	},
+	"billingInfo": {
+		"first_name": "testing",
+		"last_name": "demo user",
+		"line_1": "Generála Asmolova 1981/35",
+		"city": "Zvolen 1",
+		"country": "Slovensko",
+		"postal_code": "96001",
+		"email": "swatestac135@gmail.com",
+		"phone": "777777777777"
+	}
+}

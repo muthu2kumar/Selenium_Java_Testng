@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+  
+<suite name="Suite1" verbose="1" parallel="classes" thread-count="5">
+<listeners>
+<listener class-name="utils.TestListener"/>
+<listener class-name="utils.AnnotationTransformer"/>
+</listeners>
+
+
+  
+  <test name="Login">
+  	<classes>
+  		<class name="tests.Login.TEST_login_SSO_during_prechecout"/>
+  		<class name="tests.Login.TEST_login_user_signs_out_and_signs_in_as_different_user"/>
+  		<class name="tests.Login.TEST_login_invalid_credentails"/>
+  	</classes>
+  </test>
+ 
+  
+</suite>

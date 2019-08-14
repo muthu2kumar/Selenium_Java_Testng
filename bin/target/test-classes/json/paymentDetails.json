@@ -1,0 +1,92 @@
+{
+"Credit Card":{
+			"cardNumber":"5497774415170603",
+			"nameOnCard":"vinoth",
+			"expiryDate":"02/21",
+			"cvv":"412",
+			"otp":"123456",
+			"mobile":"9876543210",
+			"bank":"master",
+			"email":"asdfdsfafg@asdfsf.com",
+			"productAndroid":"Galaxy S7 Edge",
+			"productIOS":"Galaxy S7 edge"
+			},
+			
+"Debit Card":{
+			"cardNumber":"5497774415170603",
+			"nameOnCard":"ABCXYZ",
+			"expiryDate":"02/21",
+			"cvv":"412",
+			"otp":"123456",
+			"mobile":"",
+			"bank":"",
+			"email":"",
+			"productAndroid":"Galaxy S7 Edge",
+			"productIOS":"Galaxy S7 edge"
+			},
+			
+"bajajFinserv":{
+			"cardNumber":"",
+			"nameOnCard":"",
+			"expiryDate":"",
+			"cvv":"",
+			"otp":"",
+			"mobile":"",
+			"bank":"",
+			"email":"",
+			"productAndroid":"",
+			"productIOS":""
+			},
+			
+"pineLabs":{
+			"cardNumber":"",
+			"nameOnCard":"",
+			"expiryDate":"",
+			"cvv":"",
+			"otp":"",
+			"mobile":"",
+			"bank":"",
+			"email":"",
+			"productAndroid":"",
+			"productIOS":""
+			},
+
+"LazyPay":{
+			"cardNumber":"",
+			"nameOnCard":"",
+			"expiryDate":"",
+			"cvv":"",
+			"otp":"",
+			"mobile":"",
+			"bank":"",
+			"email":"",
+			"productAndroid":"",
+			"productIOS":""
+			},
+			
+"MobiKwik":{
+			"cardNumber":"",
+			"nameOnCard":"",
+			"expiryDate":"",
+			"cvv":"",
+			"otp":"",
+			"mobile":"",
+			"bank":"",
+			"email":"",
+			"productAndroid":"",
+			"productIOS":""
+			},
+			
+"Cash on Delivery":{
+			"cardNumber":"",
+			"nameOnCard":"",
+			"expiryDate":"",
+			"cvv":"",
+			"otp":"",
+			"mobile":"",
+			"bank":"",
+			"email":"",
+			"productAndroid":"",
+			"productIOS":""
+			}
+}

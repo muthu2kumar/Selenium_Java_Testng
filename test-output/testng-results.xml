@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6275" started-at="2019-08-12T20:46:17Z" finished-at="2019-08-12T20:46:24Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6275" started-at="2019-08-12T20:46:17Z" finished-at="2019-08-12T20:46:24Z">
+      <class name="tests.Login.TEST_login_invalid_credentails">
+        <test-method status="PASS" signature="initDriver()[pri:0, instance:tests.Login.TEST_login_invalid_credentails@23fe1d71]" name="initDriver" is-config="true" duration-ms="4734" started-at="2019-08-12T20:46:17Z" finished-at="2019-08-12T20:46:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method status="PASS" signature="user_tries_invalid_id_password_Test()[pri:0, instance:tests.Login.TEST_login_invalid_credentails@23fe1d71]" name="user_tries_invalid_id_password_Test" duration-ms="368" started-at="2019-08-12T20:46:22Z" description="user tries to login using incorrect id and password" finished-at="2019-08-12T20:46:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- user_tries_invalid_id_password_Test -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:tests.Login.TEST_login_invalid_credentails@23fe1d71]" name="tearDown" is-config="true" duration-ms="1111" started-at="2019-08-12T20:46:23Z" finished-at="2019-08-12T20:46:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.Login.TEST_login_invalid_credentails -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

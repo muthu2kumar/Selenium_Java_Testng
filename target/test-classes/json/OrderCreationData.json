@@ -1,0 +1,99 @@
+[
+{
+	"skuDetails":[{"sku_id":"EF-ZG975CWEGWW","quantity":"1"}],
+	"shippingCode":"gw",
+	"paymentCode":"COD"
+},
+{
+	"skuDetails":[{"sku_id":"EF-ZG975CWEGWW","quantity":"1"}],
+	"shippingCode":"gw",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"RS68N8671S9/EF","quantity":"1"}],
+	"shippingCode":"myQLED",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"post",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EB-P1100BSEGWW","quantity":"2"}],
+	"shippingCode":"post",
+	"paymentCode":"CCIN"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"post",
+	"paymentCode":"COD"
+},
+{
+	"skuDetails":[{"sku_id":"RS68N8671S9/EF","quantity":"1"}],
+	"shippingCode":"myHome",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"messenger",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"messenger",
+	"paymentCode":"COD"
+},
+{
+	"skuDetails":[{"sku_id":"RS68N8671S9/EF","quantity":"1"}],
+	"shippingCode":"myQLEDmyHome",
+	"paymentCode":"BT"
+},
+
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"personalPick",
+	"paymentCode":"CCPP"
+},
+
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"personalPick",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"personalPick",
+	"paymentCode":"CCPP"
+},
+{
+	"skuDetails":[{"sku_id":"EB-P1100BSEGWW","quantity":"2"}],
+	"shippingCode":"post",
+	"paymentCode":"CCIN"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"post",
+	"paymentCode":"COD"
+},
+{
+	"skuDetails":[{"sku_id":"RS68N8671S9/EF","quantity":"1"}],
+	"shippingCode":"myHome",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"messenger",
+	"paymentCode":"BT"
+},
+{
+	"skuDetails":[{"sku_id":"EF-AJ330TFEGWW","quantity":"1"}],
+	"shippingCode":"messenger",
+	"paymentCode":"COD"
+},
+{
+	"skuDetails":[{"sku_id":"RS68N8671S9/EF","quantity":"1"}],
+	"shippingCode":"myQLEDmyHome",
+	"paymentCode":"BT"
+}
+]
