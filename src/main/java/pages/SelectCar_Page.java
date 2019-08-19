@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import utils.CommonLibrary;
 
@@ -28,7 +29,7 @@ public class SelectCar_Page {
 	/**
 	 * Select car button
 	 */
-	@FindBy(id = "div.step2dtl-avilablecar-section h3")
+	@FindBy(id = "res-vehicles-select")
 	private List<WebElement> selectCar_Button;
 	
 	/**
@@ -37,17 +38,19 @@ public class SelectCar_Page {
 	 */
 	
 	public SelectCar_Page(WebDriver driver) {
+		AjaxElementLocatorFactory finder =  new AjaxElementLocatorFactory(driver, 15);
+		PageFactory.initElements(finder, this);
 		this.driver=driver;
-		PageFactory.initElements(this.driver, this);
 	}
 	
-	public void chooseCarType(String carType) {
+	public void chooseCarType(String carType) throws InterruptedException {
 		int carTypeIndex = CommonLibrary.getItemIndexFromList(driver, carType_Label, carType);
 		CommonLibrary.clickElementFromListByIndex(driver, selectCar_Button, carTypeIndex);
 	}
 	
-	public void getPrice(String carType) {
-		
+	public String getPrice(String carType) throws InterruptedException {
+		int carTypeIndex = CommonLibrary.getItemIndexFromList(driver, carType_Label, carType);
+		return price_Label.get(carTypeIndex).getText();
 	}
 	
 	

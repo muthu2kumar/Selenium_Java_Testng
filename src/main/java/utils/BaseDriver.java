@@ -4,6 +4,8 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -67,7 +69,7 @@ public class BaseDriver {
 
 			driver.set(new ChromeDriver(chromeOptions));
 		}else {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/chromedriver");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/chromedriver.exe");
 			
 			capabilities.setCapability("browserName", browserName);
 
@@ -76,6 +78,7 @@ public class BaseDriver {
 			driver.set(new ChromeDriver(chromeOptions));
 
 			getDriver().manage().window().maximize();
+			getDriver().manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
 		}
 
 	}

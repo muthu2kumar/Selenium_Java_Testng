@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -22,7 +21,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-//import org.seleniumhq.jetty7.util.log.Log;
 import org.testng.Assert;
 
 import com.aventstack.extentreports.Status;
@@ -47,6 +45,17 @@ public class CommonLibrary {
 	}
 	
 	/**
+	 * getTextFromElement - Method returns the text value of the given element
+	 * @param driver
+	 * @param ele
+	 * @return
+	 */
+	public static String getTextFromElement(WebDriver driver, WebElement ele)
+	{
+		return ele.getText().trim();
+	}
+	
+	/**
 	 * Click - waits for the element to be visible then proceeds to click on the element
 	 * @param driver
 	 * @param by
@@ -58,27 +67,28 @@ public class CommonLibrary {
 		element.click();
 	}
 	
+	/**
+	 * 
+	 * @param driver
+	 * @param element
+	 */
 	public static void Click(WebDriver driver, WebElement element)
 	{
 		element.click();
 	}
 
-	public static void scrollDown()
-	{
-		//Scroll down
-		JavascriptExecutor js = (JavascriptExecutor) driver;
 
-		HashMap scrollObject = new HashMap();
-
-		scrollObject.put("direction", "down");
-
-		js.executeScript("mobile: scroll", scrollObject);
-	}
-
-	public static boolean Type(WebDriver driver, WebElement element, String text)
+	/**
+	 * 
+	 * @param driver
+	 * @param element
+	 * @param text
+	 * @return
+	 */
+	public static boolean Type(WebDriver driver, WebElement ele, String text)
 	{
 		boolean status = false;
-		
+		WebElement element=waitForElementToBeVisible(driver, ele);
 		element.click();
 		element.sendKeys(text);
 		if(element.getText().equals(text))
@@ -95,6 +105,13 @@ public class CommonLibrary {
 		return status;
 	}
 	
+	/**
+	 * 
+	 * @param driver
+	 * @param by
+	 * @param text
+	 * @return
+	 */
 	public static boolean Type(WebDriver driver, By by, String text)
 	{
 		boolean status = false;
@@ -116,6 +133,13 @@ public class CommonLibrary {
 		return status;
 	}
 
+	/**
+	 * 
+	 * @param driver
+	 * @param by
+	 * @param text
+	 * @return
+	 */
 	public static boolean verifyText(WebDriver driver, By by, String text)
 	{
 		boolean status = false;
@@ -136,6 +160,13 @@ public class CommonLibrary {
 		return status;
 	}
 
+	/**
+	 * 
+	 * @param driver
+	 * @param by
+	 * @param text
+	 * @return
+	 */
 	public static boolean clearAndType(WebDriver driver, By by, String text) {
 
 		boolean status = false;
@@ -167,125 +198,26 @@ public class CommonLibrary {
 	}
 
 
-	/*	public static File getscreenshot(AppiumDriver driver, String screenShotName) 
-		{
-			File scrFile = null;
-			try {
-				scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-				FileUtils.copyFile(scrFile, new File(constants.Generic_Constants.screenshotFolderName+"/"+screenShotName+".png"));
-				Logger.log("Screenshot taken");
-			}
-			catch(Exception e)
-			{
-				Logger.exceptionMsg = e.getMessage();
-				Logger.log("Exception while taking screenshot");
-			}
-
-			return scrFile;
-		}
+	
+	/**
+	 * getElementList - get list of elements using By
+	 * @param driver
+	 * @param by
+	 * @return
 	 */
-
-
-	/*	public static void enter(AppiumDriver driver) {
-
-			try {
-				((AndroidDriver) driver).pressKeyCode(66);
-				Logger.log("Pressed Enter Key");
-			}
-
-			catch(Exception e)
-			{
-				Logger.exceptionMsg = e.getMessage();
-				Logger.log("Exception while pressing Enter Key");
-			}
-		}*/
-
-
-	public static boolean isElementPresent(WebDriver driver, By by)
-	{
-		boolean status = false;
-		if(driver.findElements(by).size() > 0)
-			status = true;
-		return status;
-	}
 	public static List<WebElement> getElementList(WebDriver driver, By by)
 	{
 		return driver.findElements(by);
 	}
 
-	public static void assertTextNativeApp(WebElement element, String Text) throws Exception {
-		try {
+	
 
-			String ActualText = element.getText();
-			Assert.assertEquals(ActualText,Text);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public static void assertAttributeValueNativeApp(WebElement element, String attribute ,String Text) throws Exception {
-		try {
-
-			String ActualText = element.getAttribute(attribute);
-			Assert.assertEquals(ActualText,Text);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-	public void clickwait(WebDriver driver)
-	{
-		boolean status = true;
-		while(status)
-		{
-			if(((JavascriptExecutor)driver).executeScript("return document.readyState").equals("complete"))
-				status=false;
-		}  
-	}
-
-
-	public static String getAttributeValueNativeApp(WebElement element,String attribute) throws Exception {
-		String text = null;
-		try {
-
-			text = element.getAttribute(attribute);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return text;
-	}
-
-
-
-	public static String[] getDataSet(List<String[]> table, String text)
-	{
-		String[] dSet = null;
-		for(int i = 0 ; i < table.size(); i++)
-		{
-			System.out.println(table.get(i)[0]);
-			if(table.get(i)[0].equals(text))
-			{
-				dSet = new String[table.get(i).length];
-				for(int j=0 ; j < table.get(i).length;j++)
-					dSet[j] = table.get(i)[j];
-				break;
-			}
-		}
-		return dSet;
-	}
-
-
-	public static void clickBtn(String text)
-	{
-		List<WebElement> d = driver.findElements(By.tagName("button"));
-
-		for(WebElement e : d)
-		{
-			if(e.getText().contains(text))
-				e.click();
-		}
-	}
-
+	/**
+	 * Capture - screenshot capture method
+	 * @param driver
+	 * @param screenShotName
+	 * @return path to the saved screenshot
+	 */
 	public static String Capture(WebDriver driver, String screenShotName) 
 	{ 	
 
@@ -311,7 +243,7 @@ public class CommonLibrary {
 	}
 
 	/**
-	 * @author sds-v.muthu
+	 * 
 	 * @param by
 	 * @return
 	 * 
@@ -325,7 +257,7 @@ public class CommonLibrary {
 	
 	
 	/**
-	 * @author sds-v.muthu
+	 * 
 	 * @param by
 	 * @param Name
 	 */
@@ -348,9 +280,36 @@ public class CommonLibrary {
 			Assert.assertTrue(flag, "Expected value: " + Name + " not found in the list");
 		}
 	}
+	
+	/**
+	 * 
+	 * @param driver
+	 * @param ele
+	 * @param Name
+	 * @throws InterruptedException 
+	 */
+	public static void clickElementFromListByName(WebDriver driver, List<WebElement> ele, String Name) throws InterruptedException {
+		//waitForElementToBeVisible(driver, ele.get(0));
+		//Thread.sleep(3000);
+		boolean flag = false;
+		for(WebElement e:ele) {
+			//String eText = e.getText().trim();
+			if(e.getText().trim().equalsIgnoreCase(Name)) {
+				e.click();
+				flag = true;
+				break;
+			}
+		}
+
+		if(flag) {
+			Logger.log("We think we have clicked the " + Name + " tab");
+		}else {
+			Assert.assertTrue(flag, "Expected value: " + Name + " not found in the list");
+		}
+	}
 
 	/**
-	 * @author sds-v.muthu
+	 * 
 	 * @param by
 	 * @param index
 	 * 
@@ -373,7 +332,7 @@ public class CommonLibrary {
 	}
 
 	/**
-	 * @author sds-v.muthu
+	 * 
 	 * @param by
 	 * @param Name
 	 * @return
@@ -394,9 +353,10 @@ public class CommonLibrary {
 	 * @param ele
 	 * @param Name
 	 * @return index of the element, whose text matches with expected,  in the list
+	 * @throws InterruptedException 
 	 */
-	public static int getItemIndexFromList(WebDriver driver, List<WebElement> ele, String Name) {
-		
+	public static int getItemIndexFromList(WebDriver driver, List<WebElement> ele, String Name) throws InterruptedException {
+		Thread.sleep(3000);
 		for(int i = 0; i<ele.size();i++) {
 			if(ele.get(i).getText().equalsIgnoreCase(Name)) {
 				return i;
@@ -406,7 +366,7 @@ public class CommonLibrary {
 	}
 
 	/**
-	 * @author sds-v.muthu
+	 * 
 	 * @param driver
 	 * @param by
 	 */
@@ -425,7 +385,7 @@ public class CommonLibrary {
 	}
 	
 	/**
-	 * @author sds-v.muthu
+	 * 
 	 * @param driver
 	 * @param by
 	 */
@@ -444,8 +404,22 @@ public class CommonLibrary {
 	}
 	
 	/**
-	 * changeDriverContextToWeb - switches the context from Native to Web
-	 * @author sds-v.muthu
+	 * 
+	 * @param driver
+	 * @param by
+	 * @return
+	 */
+	public static WebElement waitForElementToBeVisible(WebDriver driver, WebElement ele) {
+
+		Wait waitForElement = new WebDriverWait(driver,60,1000).ignoring(NoSuchElementException.class);
+		WebElement element=(WebElement) waitForElement.until(ExpectedConditions.visibilityOf(ele));
+
+		return element;
+	}
+	
+	/**
+	 * switchFrame - switches the frame using web element
+	 * 
 	 * @param driver
 	 */
 	public static WebDriver switchFrame(WebDriver driver, WebElement ele) {
@@ -453,14 +427,19 @@ public class CommonLibrary {
 	}
 	
 	/**
-	 * changeDriverContextToNative - switches the context from Web to Native
-	 * @author sds-v.muthu
+	 * switchFrame - switches the frame using frame id
+	 * 
 	 * @param driver
 	 */
 	public static void switchFrame(WebDriver driver, String id) {
 		driver.switchTo().frame(id);
 	}
 	
+	/**
+	 * switchFrame - switches the frame using frame index
+	 * @param driver
+	 * @param index
+	 */
 	public static void switchFrame(WebDriver driver, int index) {
 		driver.switchTo().frame(index);
 	}
