@@ -100,11 +100,12 @@ public class Search_Page {
 	
 	public void chooseMondayToSunday() throws InterruptedException {
 		
-		LocalDate ld = DateUtils.nextOrSame("MONDAY");
+		LocalDate ld = DateUtils.next("MONDAY");
 		int startDate = ld.getDayOfMonth();
 		int startMonth = ld.getMonthValue();
 		chooseStartDate(startDate,startMonth);
 		
+		Thread.sleep(3000);
 		int endDate = ld.plusDays(7).getDayOfMonth();
 		int endMonth = ld.plusDays(7).getMonthValue();
 		chooseEndDate(endDate, endMonth);
@@ -129,7 +130,7 @@ public class Search_Page {
 			CommonLibrary.clickElementFromListByName(driver, currentMonth_Calendar, Integer.toString(date));
 		}else {
 			CommonLibrary.clickElementFromListByName(driver, nextMonth_Calendar, Integer.toString(date));
-		}
+		}		
 	}
 	
 	public void clickSearchButton() {

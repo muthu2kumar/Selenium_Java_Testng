@@ -69,7 +69,7 @@ public class BaseDriver {
 
 			driver.set(new ChromeDriver(chromeOptions));
 		}else {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"/chromedriver");
 			
 			capabilities.setCapability("browserName", browserName);
 
